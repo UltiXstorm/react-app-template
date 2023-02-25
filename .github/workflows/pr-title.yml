@@ -1,0 +1,12 @@
+name: Check PR Title
+
+on: pull_request
+
+jobs:
+  check-pr-title:
+    runs-on: ubuntu-latest
+    name: Check PR Title
+    steps:
+      - uses: Slashgear/action-check-pr-title@v4.3.0
+        with:
+          regex: '(revert: )?(chore|feat|fix|test)((.*)): (.*)'
