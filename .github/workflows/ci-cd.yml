@@ -22,13 +22,6 @@ jobs:
       - name: Build Project
         run: pnpm build
 
-      - run: tar czf output.tar.gz .next
-
-      - uses: actions/upload-artifact@v3
-        with:
-          name: output
-          path: output.tar.gz
-          retention-days: 1
 
   lint:
     runs-on: ubuntu-latest
@@ -47,4 +40,4 @@ jobs:
         run: pnpm install
 
       - name: Check Lint
-        run: pnpm lint
+        run: pnpm prettier
